@@ -1,0 +1,44 @@
+services:
+  postgres:
+    image: tyamadabiodataeng/jupyter-stats-postgres
+    container_name: postgres
+    build:
+      context: ./postgres
+      dockerfile: ../dockerfiles/postgres/Dockerfile
+    environment:
+      - TZ=Asia/Tokyo
+    env_file:
+      - ./postgres/.env
+    ports:
+      - "5432:5432"
+    volumes:
+      - jupyter_stats_pg_data:/var/lib/postgresql
+    networks:
+      - jupyter-stats-network
+  jupyter:
+    build: 
+      context: ./notebooks
+      dockerfile: ../dockerfiles/jupyter/Dockerfile
+      args:
+        DIR_WORK: "/usr/src"
+        REQ_TXT: "requirements.txt"
+    image: tyamadabiodataeng/jupyter-stats
+    container_name: jupyter
+    command: jupyter lab --ip=0.0.0.0 --allow-root --LabApp.token=''
+    ports:
+     - "8888:8888"
+    volumes:
+     - ./notebooks:/usr/src
+    tty: true
+    stdin_open: true
+    depends_on:
+      - postgres
+    networks:
+      - jupyter-stats-network
+
+networks:
+  jupyter-stats-network:
+    driver: bridge
+
+volumes:
+  jupyter_stats_pg_data:
