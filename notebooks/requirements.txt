@@ -28,5 +28,8 @@ ipympl
 python-dotenv
 psycopg[binary]
 sqlalchemy
+sqlalchemy-utils
+pydantic
+pandera[mypy, pandas, polars, ibis]
 alembic
 sqlacodegen
