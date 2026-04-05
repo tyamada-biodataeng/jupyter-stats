@@ -15,6 +15,12 @@ scipy
 statsmodels
 openpyxl
 matplotlib
+python-dotenv
+psycopg[binary]
+sqlalchemy
+sqlalchemy-utils
+pydantic
+sqlmodel
 pandas[performance, plot, computation, excel]
 polars-lts-cpu
 ibis-framework[pandas, polars]
@@ -25,11 +31,6 @@ scikit-learn
 jupyterlab
 ipywidgets
 ipympl
-python-dotenv
-psycopg[binary]
-sqlalchemy
-sqlalchemy-utils
-pydantic
 pandera[mypy, pandas, polars, ibis]
 alembic
 sqlacodegen
