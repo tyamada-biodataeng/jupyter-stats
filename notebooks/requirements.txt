@@ -6,8 +6,7 @@ pytest
 pytest-snapshot
 structlog
 pytest-structlog
-sphinx
-sphinx-rtd-theme
+mkdocs
 line_profiler
 memory_profiler
 numpy
