@@ -22,7 +22,7 @@ pydantic
 sqlmodel
 pandas[performance, plot, computation, excel]
 polars-lts-cpu
-ibis-framework[pandas, polars]
+ibis-framework[pandas]
 seaborn
 fastcluster
 requests
@@ -30,6 +30,6 @@ scikit-learn
 jupyterlab
 ipywidgets
 ipympl
-pandera[mypy, pandas, polars, ibis]
+pandera[mypy, pandas, ibis]
 alembic
 sqlacodegen
